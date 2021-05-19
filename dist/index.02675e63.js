@@ -740,9 +740,9 @@ if ("development" !== "production") {
   })();
 }
 
-},{}],"61wjV":[function(require,module,exports) {
+},{}],"4cjTu":[function(require,module,exports) {
 var HMR_HOST = null;
-var HMR_PORT = 4385;
+var HMR_PORT = 7636;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d751713988987e9331980363e24189ce";
 module.bundle.HMR_BUNDLE_ID = "f9eab60bc3a7a7c3f683683702675e63";
@@ -1052,6 +1052,8 @@ try {
   var _reactDefault = _parcelHelpers.interopDefault(_react);
   var _reactDom = require('react-dom');
   var _reactDomDefault = _parcelHelpers.interopDefault(_reactDom);
+  var _reactBootstrapContainer = require('react-bootstrap/Container');
+  var _reactBootstrapContainerDefault = _parcelHelpers.interopDefault(_reactBootstrapContainer);
   var _componentsMainViewMainView = require('./components/main-view/main-view');
   require('./index.scss');
   var _jsxFileName = "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myFlix-client\\myFlix-client\\src\\index.jsx";
@@ -1059,14 +1061,21 @@ try {
   class MyFlixApplication extends _reactDefault.default.Component {
     render() {
       return (
-        /*#__PURE__*/_reactDefault.default.createElement(_componentsMainViewMainView.MainView, {
+        /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapContainerDefault.default, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 12,
+            lineNumber: 13,
             columnNumber: 7
           }
-        })
+        }, /*#__PURE__*/_reactDefault.default.createElement(_componentsMainViewMainView.MainView, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 14,
+            columnNumber: 9
+          }
+        }))
       );
     }
   }
@@ -1080,7 +1089,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","react-dom":"2sg1U","./index.scss":"5iJih","@parcel/transformer-js/lib/esmodule-helpers.js":"2BIMi","../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7vJIe","./components/main-view/main-view":"67PhB"}],"3b2NM":[function(require,module,exports) {
+},{"react":"3b2NM","react-dom":"2sg1U","./index.scss":"5iJih","@parcel/transformer-js/lib/esmodule-helpers.js":"2BIMi","../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7vJIe","./components/main-view/main-view":"67PhB","react-bootstrap/Container":"3Mt3t"}],"3b2NM":[function(require,module,exports) {
 "use strict";
 if ("development" === 'production') {
   module.exports = require('./cjs/react.production.min.js');
@@ -26487,6 +26496,10 @@ try {
   var _reactDefault = _parcelHelpers.interopDefault(_react);
   var _axios = require('axios');
   var _axiosDefault = _parcelHelpers.interopDefault(_axios);
+  var _reactBootstrapRow = require('react-bootstrap/Row');
+  var _reactBootstrapRowDefault = _parcelHelpers.interopDefault(_reactBootstrapRow);
+  var _reactBootstrapCol = require('react-bootstrap/Col');
+  var _reactBootstrapColDefault = _parcelHelpers.interopDefault(_reactBootstrapCol);
   var _movieCardMovieCard = require('../movie-card/movie-card');
   var _movieViewMovieView = require('../movie-view/movie-view');
   var _loginViewLoginView = require('../login-view/login-view');
@@ -26520,10 +26533,14 @@ try {
         selectedMovie: null
       });
     }
-    onLoggedIn(user) {
+    onLoggedIn(authData) {
+      console.log(authData);
       this.setState({
-        user
+        user: authData.user.Username
       });
+      localStorage.setItem('token', authData.token);
+      localStorage.setItem('user', authData.user.Username);
+      this.getMovies(authData.token);
     }
     onRegister(register) {
       this.setState({
@@ -26538,7 +26555,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 57,
+            lineNumber: 65,
             columnNumber: 26
           }
         })
@@ -26549,7 +26566,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 58,
+            lineNumber: 66,
             columnNumber: 23
           }
         })
@@ -26560,21 +26577,29 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 59,
+            lineNumber: 67,
             columnNumber: 37
           }
         }, "The list is empty!")
       );
       return (
-        /*#__PURE__*/_reactDefault.default.createElement("div", {
-          className: "main-view",
+        /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapRowDefault.default, {
+          className: "main-view justify-content-md-center",
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 61,
+            lineNumber: 69,
             columnNumber: 7
           }
-        }, selectedMovie ? /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
+        }, selectedMovie ? /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+          md: 8,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 72,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
           movie: selectedMovie,
           onBackClick: newSelectedMovie => {
             this.setSelectedMovie(newSelectedMovie);
@@ -26582,22 +26607,30 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 63,
+            lineNumber: 73,
+            columnNumber: 15
+          }
+        })) : movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapColDefault.default, {
+          md: 4,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 77,
             columnNumber: 13
           }
-        }) : movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
+        }, /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
           key: movie._id,
           movie: movie,
-          onMovieClick: movie => {
-            this.setSelectedMovie(movie);
+          onMovieClick: newSelectedMovie => {
+            this.setSelectedMovie(newSelectedMovie);
           },
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 65,
-            columnNumber: 13
+            lineNumber: 78,
+            columnNumber: 15
           }
-        })))
+        }))))
       );
     }
   }
@@ -26607,7 +26640,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","axios":"7rA65","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","../login-view/login-view":"6M7fu","@parcel/transformer-js/lib/esmodule-helpers.js":"2BIMi","../../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7vJIe","../registration-view/registration-view":"7gvH2"}],"7rA65":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","../login-view/login-view":"6M7fu","@parcel/transformer-js/lib/esmodule-helpers.js":"2BIMi","../../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7vJIe","../registration-view/registration-view":"7gvH2","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
 'use strict';
@@ -28377,6 +28410,9 @@ try {
       const {movie, onMovieClick} = this.props;
       return (
         /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default, {
+          style: {
+            width: '18rem'
+          },
           __self: this,
           __source: {
             fileName: _jsxFileName,
@@ -29993,6 +30029,8 @@ try {
   var _reactBootstrapFormDefault = _parcelHelpers.interopDefault(_reactBootstrapForm);
   var _reactBootstrapButton = require('react-bootstrap/Button');
   var _reactBootstrapButtonDefault = _parcelHelpers.interopDefault(_reactBootstrapButton);
+  var _axios = require('axios');
+  var _axiosDefault = _parcelHelpers.interopDefault(_axios);
   var _jsxFileName = "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myFlix-client\\myFlix-client\\src\\components\\login-view\\login-view.jsx", _s = $RefreshSig$();
   function LoginView(props) {
     _s();
@@ -30000,17 +30038,23 @@ try {
     const [password, setPassword] = _react.useState('');
     const handleSubmit = e => {
       e.preventDefault();
-      console.log(username, password);
       /*Send a request to the server for authentication*/
-      /*then call props.onLoggedIn(username)*/
-      props.onLoggedIn(username);
+      _axiosDefault.default.post('https://sharmilamovie.herokuapp.com/login', {
+        Username: username,
+        Password: password
+      }).then(response => {
+        const data = response.data;
+        props.onLoggedIn(data);
+      }).catch(e => {
+        console.log('no such user');
+      });
     };
     return (
       /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19,
+          lineNumber: 28,
           columnNumber: 5
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
@@ -30018,14 +30062,14 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20,
+          lineNumber: 29,
           columnNumber: 7
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21,
+          lineNumber: 30,
           columnNumber: 9
         }
       }, "Username:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -30034,7 +30078,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22,
+          lineNumber: 31,
           columnNumber: 9
         }
       })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Group, {
@@ -30042,14 +30086,14 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25,
+          lineNumber: 34,
           columnNumber: 7
         }
       }, /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Label, {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26,
+          lineNumber: 35,
           columnNumber: 9
         }
       }, "Password:"), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapFormDefault.default.Control, {
@@ -30058,7 +30102,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27,
+          lineNumber: 36,
           columnNumber: 9
         }
       })), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapButtonDefault.default, {
@@ -30068,7 +30112,7 @@ try {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29,
+          lineNumber: 38,
           columnNumber: 7
         }
       }, "Submit"))
@@ -30084,7 +30128,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","@parcel/transformer-js/lib/esmodule-helpers.js":"2BIMi","../../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7vJIe","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l"}],"6A5ko":[function(require,module,exports) {
+},{"react":"3b2NM","@parcel/transformer-js/lib/esmodule-helpers.js":"2BIMi","../../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7vJIe","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","axios":"7rA65"}],"6A5ko":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -31281,6 +31325,108 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","prop-types":"4dfy5","@parcel/transformer-js/lib/esmodule-helpers.js":"2BIMi","../../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7vJIe"}]},["1j6wU","61wjV","1DVjT"], "1DVjT", "parcelRequire279c")
+},{"react":"3b2NM","prop-types":"4dfy5","@parcel/transformer-js/lib/esmodule-helpers.js":"2BIMi","../../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7vJIe"}],"3fzwD":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var DEVICE_SIZES = ['xl', 'lg', 'md', 'sm', 'xs'];
+var defaultProps = {
+  noGutters: false
+};
+
+var Row = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      className = _ref.className,
+      noGutters = _ref.noGutters,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'div' : _ref$as,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "className", "noGutters", "as"]);
+  var decoratedBsPrefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'row');
+  var sizePrefix = decoratedBsPrefix + "-cols";
+  var classes = [];
+  DEVICE_SIZES.forEach(function (brkPoint) {
+    var propValue = props[brkPoint];
+    delete props[brkPoint];
+    var cols;
+
+    if (propValue != null && typeof propValue === 'object') {
+      cols = propValue.cols;
+    } else {
+      cols = propValue;
+    }
+
+    var infix = brkPoint !== 'xs' ? "-" + brkPoint : '';
+    if (cols != null) classes.push("" + sizePrefix + infix + "-" + cols);
+  });
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
+    ref: ref
+  }, props, {
+    className: _classnames.default.apply(void 0, [className, decoratedBsPrefix, noGutters && 'no-gutters'].concat(classes))
+  }));
+});
+
+Row.displayName = 'Row';
+Row.defaultProps = defaultProps;
+var _default = Row;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"3Mt3t":[function(require,module,exports) {
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+exports.__esModule = true;
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+
+var _classnames = _interopRequireDefault(require("classnames"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _ThemeProvider = require("./ThemeProvider");
+
+var defaultProps = {
+  fluid: false
+};
+
+var Container = /*#__PURE__*/_react.default.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      fluid = _ref.fluid,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'div' : _ref$as,
+      className = _ref.className,
+      props = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["bsPrefix", "fluid", "as", "className"]);
+  var prefix = (0, _ThemeProvider.useBootstrapPrefix)(bsPrefix, 'container');
+  var suffix = typeof fluid === 'string' ? "-" + fluid : '-fluid';
+  return /*#__PURE__*/_react.default.createElement(Component, (0, _extends2.default)({
+    ref: ref
+  }, props, {
+    className: (0, _classnames.default)(className, fluid ? "" + prefix + suffix : prefix)
+  }));
+});
+
+Container.displayName = 'Container';
+Container.defaultProps = defaultProps;
+var _default = Container;
+exports.default = _default;
+module.exports = exports["default"];
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}]},["1j6wU","4cjTu","1DVjT"], "1DVjT", "parcelRequire279c")
 
 //# sourceMappingURL=index.02675e63.js.map
