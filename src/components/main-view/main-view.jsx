@@ -60,6 +60,21 @@ onLoggedIn(authData) {
     });
   }
 
+getMovies(token) {
+  axios.get('https://sharmilamovie.herokuapp.com/movies', {
+    headers: { Authorization: `Bearer ${token}`}
+  })
+  .then(response => {
+    // Assign the result to the state
+    this.setState({
+      movies: response.data
+    });
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+}
+
   render() {
     const { movies, selectedMovie, user, register } = this.state;
     if (register) return <RegistrationView onRegister={register => this.onRegister(register)}/>;
