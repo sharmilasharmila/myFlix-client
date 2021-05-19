@@ -626,10 +626,10 @@ if ("development" !== "production") {
     }
     // This is a wrapper over more primitive functions for setting signature.
     // Signatures let us decide whether the Hook order has changed on refresh.
-    // 
+    //
     // This function is intended to be used as a transform target, e.g.:
     // var _s = createSignatureFunctionForTransform()
-    // 
+    //
     // function Hello() {
     // const [foo, setFoo] = useState(0);
     // const value = useCustomHook();
@@ -639,7 +639,7 @@ if ("development" !== "production") {
     // * Next calls are noops. */
     // return <h1>Hi</h1>;
     // }
-    // 
+    //
     // /* First call specifies the signature: */
     // _s(
     // Hello,
@@ -1243,12 +1243,12 @@ if ("development" !== "production") {
     {
       ReactSharedInternals.ReactDebugCurrentFrame = ReactDebugCurrentFrame;
           // by calls to these methods by a Babel plugin.
-      // 
+      //
       // In PROD (or in packages without access to React internals),
       // they are left as they are instead.
 }
     // by calls to these methods by a Babel plugin.
-    // 
+    //
     // In PROD (or in packages without access to React internals),
     // they are left as they are instead.
     function warn(format) {
@@ -3237,7 +3237,7 @@ if ("development" !== "production") {
     var tracing = require('scheduler/tracing');
     var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
     // by calls to these methods by a Babel plugin.
-    // 
+    //
     // In PROD (or in packages without access to React internals),
     // they are left as they are instead.
     function warn(format) {
@@ -4583,7 +4583,7 @@ if ("development" !== "production") {
           {
             // When syncing the value attribute, the value property should use
             // the wrapperState._initialValue property. This uses:
-            // 
+            //
             // 1. The value React property when present
             // 2. The defaultValue React property when present
             // 3. An empty string
@@ -4611,7 +4611,7 @@ if ("development" !== "production") {
       {
         // When syncing the checked attribute, both the checked property and
         // attribute are assigned at the same time using defaultChecked. This uses:
-        // 
+        //
         // 1. The checked React property when present
         // 2. The defaultChecked React property when present
         // 3. Otherwise, false
@@ -4670,10 +4670,10 @@ if ("development" !== "production") {
     // In Chrome, assigning defaultValue to certain input types triggers input validation.
     // For number inputs, the display value loses trailing decimal points. For email inputs,
     // Chrome raises "The specified value <x> is not a valid email address".
-    // 
+    //
     // Here we check to see if the defaultValue has actually changed, avoiding these problems
     // when the user is inputting text
-    // 
+    //
     // https://github.com/facebook/react/issues/7253
     function setDefaultValue(node, type, value) {
       if (// Focused number inputs synchronize on blur. See ChangeEventPlugin.js
@@ -6565,7 +6565,7 @@ if ("development" !== "production") {
       // takes the extra step of enabling pause on caught exceptions. This is
       // unintuitive, though, because even though React has caught the error, from
       // the developer's perspective, the error is uncaught.
-      // 
+      //
       // To preserve the expected "Pause on exceptions" behavior, we don't use a
       // try-catch in DEV. Instead, we synchronously dispatch a fake event to a fake
       // DOM node, and call the user-provided callback from inside an event handler
@@ -6993,7 +6993,7 @@ if ("development" !== "production") {
           // The return pointers point to the same fiber. We'll have to use the
           // default, slow path: scan the child sets of each parent alternate to see
           // which child belongs to which set.
-          // 
+          //
           // Search parent A's child set
           var didFindChild = false;
           var _child = parentA.child;
@@ -7861,19 +7861,19 @@ if ("development" !== "production") {
         }
       }
       // Check for entangled lanes and add them to the batch.
-      // 
+      //
       // A lane is said to be entangled with another when it's not allowed to render
       // in a batch that does not also include the other lane. Typically we do this
       // when multiple updates have the same source, and we only want to respond to
       // the most recent event from that source.
-      // 
+      //
       // Note that we apply entanglements *after* checking for partial work above.
       // This means that if a lane is entangled during an interleaved event while
       // it's already rendering, we won't interrupt it. This is intentional, since
       // entanglement is usually "best effort": we'll try our best to render the
       // lanes in the same batch, but it's not worth throwing out partially
       // completed work in order to do it.
-      // 
+      //
       // For those exceptions where entanglement is semantically important, like
       // useMutableSource, we should ensure that there is no partial work at the
       // time we apply the entanglement.
@@ -7910,18 +7910,18 @@ if ("development" !== "production") {
       var priority = return_highestLanePriority;
       if (priority >= InputContinuousLanePriority) {
         // User interactions should expire slightly more quickly.
-        // 
+        //
         // NOTE: This is set to the corresponding constant as in Scheduler.js. When
         // we made it larger, a product metric in www regressed, suggesting there's
         // a user interaction that's being starved by a series of synchronous
         // updates. If that theory is correct, the proper solution is to fix the
         // starvation. However, this scenario supports the idea that expiration
         // times are an important safeguard when starvation does happen.
-        // 
+        //
         // Also note that, in the case of user input specifically, this will soon no
         // longer be an issue because we plan to make user input synchronous by
         // default (until you enter `startTransition`, of course.)
-        // 
+        //
         // If weren't planning to make these updates synchronous soon anyway, I
         // would probably make this number a configurable parameter.
         return currentTime + 250;
@@ -9316,7 +9316,7 @@ if ("development" !== "production") {
       // other events and have it go through ReactBrowserEventEmitter. Since it
       // doesn't, we manually listen for the events and so we have to enqueue and
       // process the abstract event manually.
-      // 
+      //
       // Batching is necessary here in order to ensure that all event handlers run
       // before the next rerender (including event handlers attached to ancestor
       // elements instead of directly on the input). Without this, controlled
@@ -9391,7 +9391,7 @@ if ("development" !== "production") {
         // In either case, we don't want to call the event handler if the value
         // is changed from JS so we redefine a setter for `.value` that updates
         // our activeElementValue variable, allowing us to ignore those changes
-        // 
+        //
         // stopWatching() should be a noop here but we call it just in case we
         // missed a blur event somehow.
         stopWatchingForValueChange();
@@ -9405,7 +9405,7 @@ if ("development" !== "production") {
       if (domEventName === 'selectionchange' || domEventName === 'keyup' || domEventName === 'keydown') {
         // On the selectionchange event, the target is just document which isn't
         // helpful for us so just check activeElement instead.
-        // 
+        //
         // 99% of the time, keydown and keyup aren't necessary. IE8 fails to fire
         // propertychange on the first input event after setting `value` from a
         // script and fires only keydown, keypress, keyup. Catching keyup usually
@@ -10874,7 +10874,7 @@ if ("development" !== "production") {
             } else if (props.size) {
               // Setting a size greater than 1 causes a select to behave like `multiple=true`, where
               // it is possible that no option is selected.
-              // 
+              //
               // This is only necessary when a select in "single selection mode".
               node.size = props.size;
             }
@@ -11513,7 +11513,7 @@ if ("development" !== "production") {
     {
       // This validation code was written based on the HTML5 parsing spec:
       // https://html.spec.whatwg.org/multipage/syntax.html#has-an-element-in-scope
-      // 
+      //
       // Note: this does not catch all invalid nesting, nor does it try to (as it's
       // not clear what practical benefit doing so provides); instead, we warn only
       // for cases where the parser will give a parse tree differing from what React
@@ -15925,7 +15925,7 @@ if ("development" !== "production") {
         // phase, which we are now aborting. Remove the updates from the queues so
         // they do not persist to the next render. Do not remove updates from hooks
         // that weren't processed.
-        // 
+        //
         // Only reset the updates from the queue if it has a clone. If it does
         // not have a clone, that means it wasn't processed, and the updates were
         // scheduled before we entered the render phase.
@@ -16225,10 +16225,10 @@ if ("development" !== "production") {
         // What we need to determine is if there are any hooks that already
         // subscribed to the source, and if so, whether there are any pending
         // mutations that haven't been synchronized yet.
-        // 
+        //
         // If there are no pending mutations, then `root.mutableReadLanes` will be
         // empty, and we know we can safely read.
-        // 
+        //
         // If there *are* pending mutations, we may still be able to safely read
         // if the currently rendering lanes are inclusive of the pending mutation
         // lanes, since that guarantees that the value we're about to read from
@@ -16257,7 +16257,7 @@ if ("development" !== "production") {
         // (because the hook only marks sources as dirty if it's written to their WIP version).
         // That would cause this tear check to throw again and eventually be visible to the user.
         // We can avoid this infinite loop by explicitly marking the source as dirty.
-        // 
+        //
         // This can lead to tearing in the first renderer when it resumes,
         // but there's nothing we can do about that (short of throwing here and refusing to continue the render).
         markSourceAsDirty(source);
@@ -16354,14 +16354,14 @@ if ("development" !== "production") {
         return unsubscribe;
       }, [source, subscribe]);
       // If any of the inputs to useMutableSource change, reading is potentially unsafe.
-      // 
+      //
       // If either the source or the subscription have changed we can't can't trust the update queue.
       // Maybe the source changed in a way that the old subscription ignored but the new one depends on.
-      // 
+      //
       // If the getSnapshot function changed, we also shouldn't rely on the update queue.
       // It's possible that the underlying source was mutated between the when the last "change" event fired,
       // and when the current render (with the new getSnapshot function) is processed.
-      // 
+      //
       // In both cases, we need to throw away pending updates (since they are no longer relevant)
       // and treat reading from the source as we do in the mount case.
       if (!objectIs(prevGetSnapshot, getSnapshot) || !objectIs(prevSource, source) || !objectIs(prevSubscribe, subscribe)) {
@@ -17638,7 +17638,7 @@ if ("development" !== "production") {
       // want to reconcile without matching against the existing set. This has the
       // effect of all current children being unmounted; even if the type and key
       // are the same, the old child is unmounted and a new child is created.
-      // 
+      //
       // To do this, we're going to go through the reconcile algorithm twice. In
       // the first pass, we schedule a deletion for all the current children by
       // passing null.
@@ -18503,7 +18503,7 @@ if ("development" !== "production") {
       // OK, the next part is confusing. We're about to reconcile the Suspense
       // boundary's children. This involves some custom reconcilation logic. Two
       // main reasons this is so complicated.
-      // 
+      //
       // First, Legacy Mode has different semantics for backwards compatibility. The
       // primary tree will commit in an inconsistent state, so when we do the
       // second pass to render the fallback, we do some exceedingly, uh, clever
@@ -18512,11 +18512,11 @@ if ("development" !== "production") {
       // because we bailout on the primary tree completely and leave it in its old
       // state, no effects. Same as what we do for Offscreen (except that
       // Offscreen doesn't have the first render pass).
-      // 
+      //
       // Second is hydration. During hydration, the Suspense fiber has a slightly
       // different layout, where the child points to a dehydrated fragment, which
       // contains the DOM rendered by the server.
-      // 
+      //
       // Third, even if you set all that aside, Suspense is like error boundaries in
       // that we first we try to render one tree, and if that fails, we render again
       // and switch to a different tree. Like a try/catch block. So we have to track
@@ -20369,7 +20369,7 @@ if ("development" !== "production") {
             // suspend the commit. Pretend as if the suspended component rendered
             // null and keep rendering. In the commit phase, we'll schedule a
             // subsequent synchronous update to re-render the Suspense.
-            // 
+            //
             // Note: It doesn't matter whether the component that suspended was
             // inside a blocking mode tree. If the Suspense is outside of it, we
             // should *not* suspend the commit.
@@ -20404,42 +20404,42 @@ if ("development" !== "production") {
             }
             // Confirmed that the boundary is in a concurrent mode tree. Continue
             // with the normal suspend path.
-            // 
+            //
             // After this we'll use a set of heuristics to determine whether this
             // render pass will run to completion or restart or "suspend" the commit.
             // The actual logic for this is spread out in different places.
-            // 
+            //
             // This first principle is that if we're going to suspend when we complete
             // a root, then we should also restart if we get an update or ping that
             // might unsuspend it, and vice versa. The only reason to suspend is
             // because you think you might want to restart before committing. However,
             // it doesn't make sense to restart only while in the period we're suspended.
-            // 
+            //
             // Restarting too aggressively is also not good because it starves out any
             // intermediate loading state. So we use heuristics to determine when.
             // Suspense Heuristics
-            // 
+            //
             // If nothing threw a Promise or all the same fallbacks are already showing,
             // then don't suspend/restart.
-            // 
+            //
             // If this is an initial render of a new tree of Suspense boundaries and
             // those trigger a fallback, then don't suspend/restart. We want to ensure
             // that we can show the initial loading state as quickly as possible.
-            // 
+            //
             // If we hit a "Delayed" case, such as when we'd switch from content back into
             // a fallback, then we should always suspend/restart. Transitions apply
             // to this case. If none is defined, JND is used instead.
-            // 
+            //
             // If we're already showing a fallback and it gets "retried", allowing us to show
             // another level, but there's still an inner boundary that would show a fallback,
             // then we suspend/restart for 500ms since the last time we showed a fallback
             // anywhere in the tree. This effectively throttles progressive loading into a
             // consistent train of commits. This also gives us an opportunity to restart to
             // get to the completed state slightly earlier.
-            // 
+            //
             // If there's ambiguity due to batching it's resolved in preference of:
             // 1) "delayed", 2) "initial render", 3) "retry".
-            // 
+            //
             // We want to ensure that a "busy" state doesn't get force committed. We want to
             // ensure that new initial loading states can commit as soon as possible.
             attachPingListener(root, wakeable, rootRenderLanes);
@@ -21018,7 +21018,7 @@ if ("development" !== "production") {
       // with findDOMNode and how it requires the sibling field to carry out
       // traversal in a later effect. See PR #16820. We now clear the sibling
       // field after effects, see: detachFiberAfterEffects.
-      // 
+      //
       // Don't disconnect stateNode now; it will be detached in detachFiberAfterEffects.
       // It may be required if the current component is an error boundary,
       // and one of its descendants throws while unmounting a passive effect.
@@ -21523,7 +21523,7 @@ if ("development" !== "production") {
     // case where it's different from `workInProgressRootRenderLanes` is when we
     // enter a subtree that is hidden and needs to be unhidden: Suspense and
     // Offscreen component.
-    // 
+    //
     // Most things in the work loop should deal with workInProgressRootRenderLanes.
     // Most things in begin/complete phases should deal with subtreeRenderLanes.
     var subtreeRenderLanes = NoLanes;
@@ -21624,15 +21624,15 @@ if ("development" !== "production") {
       // updates at the same priority within the same event. To do this, the inputs
       // to the algorithm must be the same. For example, we use the `renderLanes`
       // to avoid choosing a lane that is already in the middle of rendering.
-      // 
+      //
       // However, the "included" lanes could be mutated in between updates in the
       // same event, like if you perform an update inside `flushSync`. Or any other
       // code path that might call `prepareFreshStack`.
-      // 
+      //
       // The trick we use is to cache the first of each of these inputs within an
       // event. Then reset the cached values once we can be sure the event is over.
       // Our heuristic for that is whenever we enter a concurrent work loop.
-      // 
+      //
       // We'll do the same for `currentEventPendingLanes` below.
       if (currentEventWipLanes === NoLanes) {
         currentEventWipLanes = workInProgressRootIncludedLanes;
@@ -21890,7 +21890,7 @@ if ("development" !== "production") {
         // For example, when unhiding a hidden tree, we include all the lanes
         // that were previously skipped when the tree was hidden. That set of
         // lanes is a superset of the lanes we started rendering with.
-        // 
+        //
         // So we'll throw out the current work and restart.
         prepareFreshStack(root, NoLanes);
       } else if (exitStatus !== RootIncomplete) {
@@ -22067,7 +22067,7 @@ if ("development" !== "production") {
           // For example, when unhiding a hidden tree, we include all the lanes
           // that were previously skipped when the tree was hidden. That set of
           // lanes is a superset of the lanes we started rendering with.
-          // 
+          //
           // Note that this only happens when part of the tree is rendered
           // concurrently. If the whole tree is rendered synchronously, then there
           // are no interleaved events.
@@ -23257,7 +23257,7 @@ if ("development" !== "production") {
               // This component has already been unmounted.
               // We can't schedule any follow up work for the root because the fiber is already unmounted,
               // but we can still call the log-only boundary so the error isn't swallowed.
-              // 
+              //
               // TODO This is only a temporary bandaid for the old reconciler fork.
               // We can delete this special case once the new fork is merged.
               if (typeof instance.componentDidCatch === 'function' && !isAlreadyFailedLegacyErrorBoundary(instance)) {
@@ -24088,14 +24088,14 @@ if ("development" !== "production") {
       this.alternate = null;
       {
         // Note: The following is done to avoid a v8 performance cliff.
-        // 
+        //
         // Initializing the fields below to smis and later updating them with
         // double values will cause Fibers to end up having separate shapes.
         // This behavior/bug has something to do with Object.preventExtension().
         // Fortunately this only impacts DEV builds.
         // Unfortunately it makes React unusably slow for some applications.
         // To work around this, initialize the fields below with doubles.
-        // 
+        //
         // Learn more about this here:
         // https://github.com/facebook/react/issues/14365
         // https://bugs.chromium.org/p/v8/issues/detail?id=8538
@@ -26490,6 +26490,7 @@ try {
   var _movieCardMovieCard = require('../movie-card/movie-card');
   var _movieViewMovieView = require('../movie-view/movie-view');
   var _loginViewLoginView = require('../login-view/login-view');
+  var _registrationViewRegistrationView = require('../registration-view/registration-view');
   var _jsxFileName = "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myFlix-client\\myFlix-client\\src\\components\\main-view\\main-view.jsx";
   class MainView extends _reactDefault.default.Component {
     constructor() {
@@ -26514,20 +26515,41 @@ try {
         selectedMovie: newSelectedMovie
       });
     }
+    onBackClick() {
+      this.setState({
+        selectedMovie: null
+      });
+    }
     onLoggedIn(user) {
       this.setState({
         user
       });
     }
+    onRegister(register) {
+      this.setState({
+        register
+      });
+    }
     render() {
-      const {movies, selectedMovie} = this.state;
+      const {movies, selectedMovie, user, register} = this.state;
+      if (register) return (
+        /*#__PURE__*/_reactDefault.default.createElement(_registrationViewRegistrationView.RegistrationView, {
+          onRegister: register => this.onRegister(register),
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 57,
+            columnNumber: 26
+          }
+        })
+      );
       if (!user) return (
         /*#__PURE__*/_reactDefault.default.createElement(_loginViewLoginView.LoginView, {
           onLoggedIn: user => this.onLoggedIn(user),
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 44,
+            lineNumber: 58,
             columnNumber: 23
           }
         })
@@ -26538,7 +26560,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 45,
+            lineNumber: 59,
             columnNumber: 37
           }
         }, "The list is empty!")
@@ -26549,7 +26571,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 47,
+            lineNumber: 61,
             columnNumber: 7
           }
         }, selectedMovie ? /*#__PURE__*/_reactDefault.default.createElement(_movieViewMovieView.MovieView, {
@@ -26560,7 +26582,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 49,
+            lineNumber: 63,
             columnNumber: 13
           }
         }) : movies.map(movie => /*#__PURE__*/_reactDefault.default.createElement(_movieCardMovieCard.MovieCard, {
@@ -26572,7 +26594,7 @@ try {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51,
+            lineNumber: 65,
             columnNumber: 13
           }
         })))
@@ -26585,7 +26607,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","axios":"7rA65","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","../login-view/login-view":"6M7fu","@parcel/transformer-js/lib/esmodule-helpers.js":"2BIMi","../../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7vJIe"}],"7rA65":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","../movie-card/movie-card":"7v6h3","../movie-view/movie-view":"3xBbr","../login-view/login-view":"6M7fu","@parcel/transformer-js/lib/esmodule-helpers.js":"2BIMi","../../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7vJIe","../registration-view/registration-view":"7gvH2"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
 'use strict';
@@ -29326,7 +29348,7 @@ try {
     _s();
     const [username, setUsername] = _react.useState('');
     const [password, setPassword] = _react.useState('');
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
       e.preventDefault();
       console.log(username, password);
       /*Send a request to the server for authentication*/
@@ -29397,6 +29419,130 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","@parcel/transformer-js/lib/esmodule-helpers.js":"2BIMi","../../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7vJIe"}]},["1j6wU","61wjV","1DVjT"], "1DVjT", "parcelRequire279c")
+},{"react":"3b2NM","@parcel/transformer-js/lib/esmodule-helpers.js":"2BIMi","../../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7vJIe"}],"7gvH2":[function(require,module,exports) {
+var helpers = require("../../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "RegistrationView", function () {
+    return RegistrationView;
+  });
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  require('prop-types');
+  var _jsxFileName = "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myFlix-client\\myFlix-client\\src\\components\\registration-view\\registration-view.jsx", _s = $RefreshSig$();
+  function RegistrationView(props) {
+    _s();
+    const [username, setUsername] = _react.useState('');
+    const [password, setPassword] = _react.useState('');
+    const [email, setEmail] = _react.useState('');
+    const [birthdate, setBirthdate] = _react.useState('');
+    const handleSubmit = e => {
+      e.preventDefault();
+      console.log(username, password, email, birthdate);
+      props.onRegister(username);
+    };
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement(Form, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/_reactDefault.default.createElement(Label, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18,
+          columnNumber: 11
+        }
+      }, "Username:", /*#__PURE__*/_reactDefault.default.createElement("input", {
+        type: "text",
+        value: username,
+        onChange: e => setUsername(e.target.value),
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19,
+          columnNumber: 13
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement(Label, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21,
+          columnNumber: 11
+        }
+      }, "Password:", /*#__PURE__*/_reactDefault.default.createElement("input", {
+        type: "text",
+        value: password,
+        onChange: e => setPassword(e.target.value),
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22,
+          columnNumber: 13
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement(Label, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24,
+          columnNumber: 11
+        }
+      }, "Email:", /*#__PURE__*/_reactDefault.default.createElement("input", {
+        type: "text",
+        value: email,
+        onChange: e => setEmail(e.target.value),
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25,
+          columnNumber: 13
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement(Label, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27,
+          columnNumber: 11
+        }
+      }, "Birthdate:", /*#__PURE__*/_reactDefault.default.createElement("input", {
+        type: "text",
+        value: birthdate,
+        onChange: e => setBirthdate(e.target.value),
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28,
+          columnNumber: 13
+        }
+      })), /*#__PURE__*/_reactDefault.default.createElement(Button, {
+        type: "submit",
+        onClick: handleSubmit,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30,
+          columnNumber: 11
+        }
+      }, "Submit"))
+    );
+  }
+  _s(RegistrationView, "TD2fkD1Ab4Kck2JJHVZv+3f7f/8=");
+  _c = RegistrationView;
+  var _c;
+  $RefreshReg$(_c, "RegistrationView");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+
+},{"react":"3b2NM","prop-types":"4dfy5","@parcel/transformer-js/lib/esmodule-helpers.js":"2BIMi","../../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7vJIe"}]},["1j6wU","61wjV","1DVjT"], "1DVjT", "parcelRequire279c")
 
 //# sourceMappingURL=index.02675e63.js.map
