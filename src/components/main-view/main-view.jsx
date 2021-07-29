@@ -15,7 +15,7 @@ import { NavBar } from '../navbar-view/navbar-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { UpdateView } from '../update-view/update-view.jsx';
 import MoviesList from '../movies-list/movies-list';
-import { LoginView } from '../login-view/login-view';
+import { LoginView } from '../Login-View/Login-View';
 
 class MainView extends React.Component {
   constructor() {

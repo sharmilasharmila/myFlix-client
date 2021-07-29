@@ -22080,7 +22080,7 @@ var _profileView = require("../profile-view/profile-view");
 var _updateViewJsx = require("../update-view/update-view.jsx");
 var _moviesList = require("../movies-list/movies-list");
 var _moviesListDefault = parcelHelpers.interopDefault(_moviesList);
-var _loginView = require("../login-view/login-view");
+var _loginView = require("../Login-View/Login-View");
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super();
@@ -22338,7 +22338,7 @@ exports.default = _reactRedux.connect(mapStateToProps, {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","axios":"7rA65","react-router-dom":"1PMSK","react-redux":"7GDa4","../../actions/actions":"5S6cN","../movie-view/movie-view":"4rIXY","../login-view/login-view":"2AX9F","../registration-view/registration-view":"5GlkG","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","../movies-list/movies-list":"4Lsx2","react-bootstrap":"4n7hB","../director-view/director-view":"7y95x","../genre-view/genre-view":"DdLfj","../navbar-view/navbar-view":"1WEak","../profile-view/profile-view":"7th2y","../update-view/update-view.jsx":"7Enrg","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"7rA65":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","react-router-dom":"1PMSK","react-redux":"7GDa4","../../actions/actions":"5S6cN","../movie-view/movie-view":"4rIXY","../registration-view/registration-view":"5GlkG","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","../movies-list/movies-list":"4Lsx2","react-bootstrap":"4n7hB","../director-view/director-view":"7y95x","../genre-view/genre-view":"DdLfj","../navbar-view/navbar-view":"1WEak","../profile-view/profile-view":"7th2y","../update-view/update-view.jsx":"7Enrg","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","../Login-View/Login-View":"Sm8sI"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
@@ -41451,199 +41451,7 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"592mh"}],"2AX9F":[function(require,module,exports) {
-var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "LoginView", ()=>LoginView
-);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _form = require("react-bootstrap/Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
-var _button = require("react-bootstrap/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _myflixLogoPng = require("url:../../../public/myflix-logo.png");
-var _myflixLogoPngDefault = parcelHelpers.interopDefault(_myflixLogoPng);
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _loginViewScss = require("./login-view.scss");
-var _s = $RefreshSig$();
-function LoginView(props) {
-    _s();
-    const [username, setUsername] = _react.useState('');
-    const [password, setPassword] = _react.useState('');
-    const handleSubmit = (e)=>{
-        e.preventDefault();
-        _axiosDefault.default.post('https://sharmilamovie.herokuapp.com/login', {
-            Username: username,
-            Password: password
-        }).then((response)=>{
-            const data = response.data;
-            props.onLoggedIn(data);
-        }).catch((e1)=>{
-            alert('Wrong Email or Password');
-        });
-    };
-    return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
-        className: "login-wrapper",
-        __source: {
-            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 30
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
-        className: "myFlix-logo",
-        width: 100,
-        src: _myflixLogoPngDefault.default,
-        alt: "logo",
-        __source: {
-            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 31
-        },
-        __self: this
-    }), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
-        className: "login-form",
-        __source: {
-            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 32
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
-        controleid: "formUsername",
-        __source: {
-            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 33
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
-        __source: {
-            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 34
-        },
-        __self: this
-    }, "Username:"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
-        type: "text",
-        onChange: (e)=>setUsername(e.target.value)
-        ,
-        __source: {
-            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 35
-        },
-        __self: this
-    })), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
-        controlId: "formPassword",
-        __source: {
-            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 37
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
-        __source: {
-            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 38
-        },
-        __self: this
-    }, "Password:"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
-        type: "password",
-        onChange: (e)=>setPassword(e.target.value)
-        ,
-        __source: {
-            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 39
-        },
-        __self: this
-    })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-        className: "d-grid gap-2",
-        __source: {
-            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 41
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-        variant: "primary",
-        type: "submit",
-        size: "lg",
-        onClick: handleSubmit,
-        __source: {
-            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 42
-        },
-        __self: this
-    }, "Sign In"), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
-        "data-content": "Or",
-        className: "hr-text",
-        __source: {
-            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 43
-        },
-        __self: this
-    }), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-        href: "/register",
-        variant: "secondary",
-        size: "lg",
-        __source: {
-            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 44
-        },
-        __self: this
-    }, "Register here")))));
-}
-_s(LoginView, "wuQOK7xaXdVz4RMrZQhWbI751Oc=");
-_c = LoginView;
-LoginView.propTypes = {
-    user: _propTypesDefault.default.shape({
-        username: _propTypesDefault.default.string.isRequired,
-        password: _propTypesDefault.default.string.isRequired
-    })
-};
-var _c;
-$RefreshReg$(_c, "LoginView");
-
-  helpers.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"3b2NM","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","axios":"7rA65","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","prop-types":"4dfy5","./login-view.scss":"2hI9d","url:../../../public/myflix-logo.png":"4bldo","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"2hI9d":[function() {},{}],"4bldo":[function(require,module,exports) {
-module.exports = require('./bundle-url').getBundleURL() + "myflix-logo.c3ab4377.png";
-
-},{"./bundle-url":"3seVR"}],"3seVR":[function(require,module,exports) {
-"use strict";
-/* globals document:readonly */ var bundleURL = null;
-function getBundleURLCached() {
-    if (!bundleURL) bundleURL = getBundleURL();
-    return bundleURL;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) return getBaseURL(matches[0]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    let matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"5GlkG":[function(require,module,exports) {
+},{"react-refresh/runtime":"592mh"}],"5GlkG":[function(require,module,exports) {
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41936,7 +41744,38 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","axios":"7rA65","react-bootstrap/Form":"6A5ko","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-bootstrap/Button":"1ru0l","url:../../../public/myflix-logo.png":"4bldo","./registration-view.scss":"3cRtR","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"3cRtR":[function() {},{}],"4Lsx2":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","axios":"7rA65","react-bootstrap/Form":"6A5ko","react-bootstrap/Row":"3fzwD","react-bootstrap/Col":"2D0r8","react-bootstrap/Button":"1ru0l","url:../../../public/myflix-logo.png":"4bldo","./registration-view.scss":"3cRtR","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"4bldo":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + "myflix-logo.c3ab4377.png";
+
+},{"./bundle-url":"3seVR"}],"3seVR":[function(require,module,exports) {
+"use strict";
+/* globals document:readonly */ var bundleURL = null;
+function getBundleURLCached() {
+    if (!bundleURL) bundleURL = getBundleURL();
+    return bundleURL;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) return getBaseURL(matches[0]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    let matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"3cRtR":[function() {},{}],"4Lsx2":[function(require,module,exports) {
 var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -43155,7 +42994,168 @@ UpdateView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","react-bootstrap":"4n7hB","prop-types":"4dfy5","axios":"7rA65","react-router-dom":"1PMSK","./update-view.scss":"1i5pm","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"1i5pm":[function() {},{}],"7panR":[function(require,module,exports) {
+},{"react":"3b2NM","react-bootstrap":"4n7hB","prop-types":"4dfy5","axios":"7rA65","react-router-dom":"1PMSK","./update-view.scss":"1i5pm","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"1i5pm":[function() {},{}],"Sm8sI":[function(require,module,exports) {
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LoginView", ()=>LoginView
+);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _myflixLogoPng = require("url:../../../public/myflix-logo.png");
+var _myflixLogoPngDefault = parcelHelpers.interopDefault(_myflixLogoPng);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _loginViewScss = require("./login-view.scss");
+var _s = $RefreshSig$();
+function LoginView(props) {
+    _s();
+    const [username, setUsername] = _react.useState('');
+    const [password, setPassword] = _react.useState('');
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        _axiosDefault.default.post('https://sharmilamovie.herokuapp.com/login', {
+            Username: username,
+            Password: password
+        }).then((response)=>{
+            const data = response.data;
+            props.onLoggedIn(data);
+        }).catch((e1)=>{
+            alert('Wrong Email or Password');
+        });
+    };
+    return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "login-wrapper",
+        __source: {
+            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\Login-View\\Login-View.jsx",
+            lineNumber: 30
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
+        className: "myFlix-logo",
+        width: 100,
+        src: _myflixLogoPngDefault.default,
+        alt: "logo",
+        __source: {
+            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\Login-View\\Login-View.jsx",
+            lineNumber: 31
+        },
+        __self: this
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default, {
+        className: "login-form",
+        __source: {
+            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\Login-View\\Login-View.jsx",
+            lineNumber: 32
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        controleid: "formUsername",
+        __source: {
+            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\Login-View\\Login-View.jsx",
+            lineNumber: 33
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
+        __source: {
+            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\Login-View\\Login-View.jsx",
+            lineNumber: 34
+        },
+        __self: this
+    }, "Username:"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+        type: "text",
+        onChange: (e)=>setUsername(e.target.value)
+        ,
+        __source: {
+            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\Login-View\\Login-View.jsx",
+            lineNumber: 35
+        },
+        __self: this
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
+        controlId: "formPassword",
+        __source: {
+            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\Login-View\\Login-View.jsx",
+            lineNumber: 37
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
+        __source: {
+            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\Login-View\\Login-View.jsx",
+            lineNumber: 38
+        },
+        __self: this
+    }, "Password:"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
+        type: "password",
+        onChange: (e)=>setPassword(e.target.value)
+        ,
+        __source: {
+            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\Login-View\\Login-View.jsx",
+            lineNumber: 39
+        },
+        __self: this
+    })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        className: "d-grid gap-2",
+        __source: {
+            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\Login-View\\Login-View.jsx",
+            lineNumber: 41
+        },
+        __self: this
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+        variant: "primary",
+        type: "submit",
+        size: "lg",
+        onClick: handleSubmit,
+        __source: {
+            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\Login-View\\Login-View.jsx",
+            lineNumber: 42
+        },
+        __self: this
+    }, "Sign In"), /*#__PURE__*/ _reactDefault.default.createElement("hr", {
+        "data-content": "Or",
+        className: "hr-text",
+        __source: {
+            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\Login-View\\Login-View.jsx",
+            lineNumber: 43
+        },
+        __self: this
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+        href: "/register",
+        variant: "secondary",
+        size: "lg",
+        __source: {
+            fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\Login-View\\Login-View.jsx",
+            lineNumber: 44
+        },
+        __self: this
+    }, "Register here")))));
+}
+_s(LoginView, "wuQOK7xaXdVz4RMrZQhWbI751Oc=");
+_c = LoginView;
+LoginView.propTypes = {
+    user: _propTypesDefault.default.shape({
+        username: _propTypesDefault.default.string.isRequired,
+        password: _propTypesDefault.default.string.isRequired
+    })
+};
+var _c;
+$RefreshReg$(_c, "LoginView");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","url:../../../public/myflix-logo.png":"4bldo","axios":"7rA65","./login-view.scss":"3BQQF","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"3BQQF":[function() {},{}],"7panR":[function(require,module,exports) {
 'use strict';
 Object.defineProperty(exports, '__esModule', {
     value: true
