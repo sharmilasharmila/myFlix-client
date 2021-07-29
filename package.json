@@ -9,13 +9,15 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
-    "bootstrap": "^4.6.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
-    "react-bootstrap": "^1.6.0",
+    "react-bootstrap": "^1.6.1",
+    "react-bootstrap-floating-label": "^1.6.0",
     "react-dom": "^17.0.2",
+    "react-hook-form": "^7.12.1",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
+    "react-toastify": "^7.0.4",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9"
   },
@@ -29,6 +31,8 @@
   "homepage": "https://github.com/sharmilasharmila/myFlix-client#readme",
   "description": "",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0-beta.3.1"
+    "@parcel/transformer-image": "^2.0.0-beta.3.1",
+    "@parcel/transformer-sass": "^2.0.0-beta.3.1",
+    "sharp": "^0.28.3"
   }
 }

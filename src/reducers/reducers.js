@@ -20,13 +20,6 @@ function movies(state=[],action){
     }
 }
 
-// function moviesApp(state={}, action){
-//     return{
-//         visiblityFilter: visiblityFilter(stae.visiblityFilter, action),
-//         movies: movies(state.movies, action)
-//     }
-// }
-
 const moviesApp = combineReducers({
     visiblityFilter,
     movies

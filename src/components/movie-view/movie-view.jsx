@@ -1,42 +1,96 @@
-import React from 'react';
+import React from "react";
+import PropTypes from 'prop-types';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { Row, Button, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+import './movie-view.scss';
 
 export class MovieView extends React.Component {
 
-  keypressCallback(event) {
-    console.log(event.key);
+  handleAdd() {
+    const token = localStorage.getItem("token");
+    const user = localStorage.getItem("user");
+    const notifyAdd = () => toast.info(this.props.movie.Title + " has been added to your favorites!");
+    axios.post(`https://sharmilamovie.herokuapp.com/users/${user}/Movies/` +
+      this.props.movie._id, {},
+      { headers: { Authorization: `Bearer ${token}` } }
+    )
+      .then((response) => {
+        console.log(response);
+        notifyAdd();
+      })
   }
 
-  componentDidMount() {
-    document.addEventListener('keypress', this.keypressCallback);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keypress', this.keypressCallback);
+  handleRemove() {
+    const token = localStorage.getItem("token");
+    const user = localStorage.getItem("user");
+    const notifyRemove = () => toast.warning(this.props.movie.Title + " has been removed from your favorites!");
+    axios.post(`https://sharmilamovie.herokuapp.com/users/${user}/Movies/` +
+      this.props.movie._id, {},
+      { headers: { Authorization: `Bearer ${token}` } }
+    )
+      .then((response) => {
+        console.log(response);
+        notifyRemove();
+      })
   }
 
   render() {
     const { movie, onBackClick } = this.props;
-
+    
+    if (!movie) return null;
+    
     return (
-      <div className="movie-view">
-        <div className="movie-poster">
-          <img src={movie.ImagePath} />
+      <>
+        <div className="movie-view-wrapper ml-5 mt-3">
+          <Row>
+            <div>
+              <img src={movie.ImagePath} />
+            </div>
+          </Row>
+          <Row>
+            <span className="meta-text">Genre: <Link to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link></span>
+          </Row>
+          <Row>
+            <span className="meta-text">Directed by: <Link to={`/directors/${movie.Director.Name}`}>{movie.Director.Name}</Link></span>
+          </Row>
+          <Row  className="text-white">
+            <h1>{movie.Title}</h1>
+            <p className="movie-description">{movie.Description}</p>
+            <div className="back-btn">
+              <Button className="lg" variant="primary" onClick={() => {onBackClick(null);}}>Back to Movies</Button>
+            </div>
+            <div className="favorite-buttons">
+              <Link to={`/Movies/${movie.Title}`}>
+                <Button block type="button" variant="success" onClick={() => this.handleAdd(movie)}>Add to favorites</Button>
+              </Link>
+              <ToastContainer />
+            </div>
+            <div className="favorite-buttons">
+              <Link to={`/Movies/${movie.Title}`}>
+                <Button block type="button" variant="danger" onClick={() => this.handleRemove(movie)}>Remove from favorites</Button>
+              </Link>
+            </div>
+          </Row>
         </div>
-        <div className="movie-title">
-          <span className="label">Title: </span>
-          <span className="value">{movie.Title}</span>
-        </div>
-        <div className="movie-description">
-          <span className="label">Description: </span>
-          <span className="value">{movie.Description}</span>
-        </div>
-        <Link to={`/directors/${movie.Director.Name}`}>
-          <Button variant="link">Director</Button>
-        </Link>
-        <Link to={`/genres/${movie.Genre.Name}`}>
-          <Button variant="link">Genre</Button>
-        </Link>
-       </div>
+      </>
     );
   }
 }
+
+MovieView.propTypes = {
+  movie: PropTypes.shape({
+    Title: PropTypes.string.isRequired,
+    Description: PropTypes.string.isRequired,
+    ImagePath: PropTypes.string.isRequired,
+    Genre: PropTypes.shape({
+      Name: PropTypes.string,}),
+    Director: PropTypes.shape({
+      Name: PropTypes.string
+    })
+  })
+};
