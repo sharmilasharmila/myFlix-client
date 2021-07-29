@@ -22072,7 +22072,6 @@ var _reactRouterDom = require("react-router-dom");
 var _reactBootstrap = require("react-bootstrap");
 var _actions = require("../../actions/actions");
 var _registrationView = require("../registration-view/registration-view");
-var _loginView = require("../login-view/login-view");
 var _movieView = require("../movie-view/movie-view");
 var _directorView = require("../director-view/director-view");
 var _genreView = require("../genre-view/genre-view");
@@ -22081,6 +22080,7 @@ var _profileView = require("../profile-view/profile-view");
 var _updateViewJsx = require("../update-view/update-view.jsx");
 var _moviesList = require("../movies-list/movies-list");
 var _moviesListDefault = parcelHelpers.interopDefault(_moviesList);
+var _loginView = require("../login-view/login-view");
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super();
