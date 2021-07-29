@@ -2,13 +2,11 @@ import React from 'react';
 import axios from 'axios';
 
 import { connect } from 'react-redux';
-
-//Route requirements
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap';
 
-//Components
-import { setMovies } from '../../actions/actions';
-import { setUser } from '../../actions/actions';
+import { setMovies, setUser } from '../../actions/actions';
+
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { MovieView } from '../movie-view/movie-view';
@@ -19,15 +17,12 @@ import { ProfileView } from '../profile-view/profile-view';
 import { UpdateView } from '../update-view/update-view.jsx';
 import MoviesList from '../movies-list/movies-list';
 
-//Bootrstrap imports
-import { Row, Col } from 'react-bootstrap';
-
 class MainView extends React.Component {
   constructor() {
     super();
     this.state = {
       user: null,
-      //selectedMovie: null,
+      selectedMovie: null,
     };
     console.log('main-view loaded successfully')
   }
@@ -71,7 +66,6 @@ class MainView extends React.Component {
     console.log('success getting movies')
   }
 
-  /*When a user logs in, this function updates the user property in state to that particular user */
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
@@ -81,8 +75,7 @@ class MainView extends React.Component {
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
     this.getMovies(authData.token);
-}
-
+  } 
 
   render() {
     let { movies } = this.props;
@@ -100,9 +93,7 @@ class MainView extends React.Component {
                     <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                   </Col>
                 );
-  
                 if (movies.length === 0) return (<div className="main-view" />);
-
                 return (
                   <>
                     <Row className="m-3 navigation-main"><NavBar user={user} /></Row>
@@ -190,9 +181,7 @@ class MainView extends React.Component {
                     <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                   </Col>
                 )
-
                 if (movies.length === 0) return <div className="main-view" />;
-                
                 return (
                   <>
                     <Row className="m-3 navigation-main">
@@ -216,9 +205,7 @@ class MainView extends React.Component {
                     <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                   </Col>
                 )
-                
                 if (movies.length === 0) return <div className="main-view" />;
-                
                 return (
                   <>
                     <Row className="m-3 navigation-main">
@@ -234,15 +221,11 @@ class MainView extends React.Component {
                   </>
                   )
                 }} />
-
-              
-
             </Row>
       </Router>
-    </>
-  );
-  }
-};
+    </>);
+    }
+  };
 
 let mapStateToProps = state => {
   return { 
