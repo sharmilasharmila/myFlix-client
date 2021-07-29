@@ -7,8 +7,8 @@ import { Row, Col } from 'react-bootstrap';
 
 import { setMovies, setUser } from '../../actions/actions';
 
-import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
+import { LoginView } from '../login-view/login-view';
 import { MovieView } from '../movie-view/movie-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
