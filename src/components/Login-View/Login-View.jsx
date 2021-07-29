@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import logo from 'url:../../../public/myflix-logo.png';
 import axios from 'axios';
 
-import './login-view.scss';
+import './Login-View.scss';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
