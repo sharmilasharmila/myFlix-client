@@ -22072,8 +22072,6 @@ var _reactRedux = require("react-redux");
 var _reactRouterDom = require("react-router-dom");
 //Components
 var _actions = require("../../actions/actions");
-var _moviesList = require("../movies-list/movies-list");
-var _moviesListDefault = parcelHelpers.interopDefault(_moviesList);
 var _loginView = require("../login-view/login-view");
 var _registrationView = require("../registration-view/registration-view");
 var _movieView = require("../movie-view/movie-view");
@@ -22082,6 +22080,8 @@ var _genreView = require("../genre-view/genre-view");
 var _navbarView = require("../navbar-view/navbar-view");
 var _profileView = require("../profile-view/profile-view");
 var _updateViewJsx = require("../update-view/update-view.jsx");
+var _moviesList = require("../movies-list/movies-list");
+var _moviesListDefault = parcelHelpers.interopDefault(_moviesList);
 //Bootrstrap imports
 var _reactBootstrap = require("react-bootstrap");
 class MainView extends _reactDefault.default.Component {
