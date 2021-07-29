@@ -56,7 +56,7 @@ export class MovieView extends React.Component {
             <span className="meta-text">Genre: <Link to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link></span>
           </Row>
           <Row>
-            <span className="meta-text">Directed by: <Link to={`/directors/${movie.Director.Name}`}>{movie.Director.Name}</Link></span>
+            <span className="meta-text">Director: <Link to={`/directors/${movie.Director.Name}`}>{movie.Director.Name}</Link></span>
           </Row>
           <Row  className="text-white">
             <h1>{movie.Title}</h1>

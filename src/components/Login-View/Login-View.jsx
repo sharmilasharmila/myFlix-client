@@ -28,7 +28,7 @@ export function LoginView(props) {
 
   return (
     <div className="login-wrapper">
-      <img className="myFlix-logo" width={400} src={logo} alt="logo" />
+      <img className="myFlix-logo" width={100} src={logo} alt="logo" />
       <Form className="login-form">
         <Form.Group controleid="formUsername">
           <Form.Label>Username:</Form.Label>

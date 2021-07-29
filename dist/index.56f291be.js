@@ -22194,6 +22194,54 @@ class MainView extends _reactDefault.default.Component {
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+            path: "/users/:Username",
+            render: ({ history  })=>{
+                if (movies.length === 0) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+                    className: "main-view"
+                }));
+                if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
+                    onLoggedIn: (user1)=>this.onLoggedIn(user1)
+                })));
+                return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
+                    className: "m-3 navigation-main"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _reactDefault.default.createElement(_navbarView.NavBar, {
+                    user: user
+                }))), /*#__PURE__*/ _reactDefault.default.createElement(_profileView.ProfileView, {
+                    user: user,
+                    movies: movies,
+                    onBackClick: ()=>history.goBack()
+                })));
+            },
+            __source: {
+                fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\main-view\\main-view.jsx",
+                lineNumber: 127
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+            path: "/users/:Username",
+            render: ({ history  })=>{
+                if (movies.length === 0) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+                    className: "main-view"
+                }));
+                if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
+                    onLoggedIn: (user1)=>this.onLoggedIn(user1)
+                })));
+                return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
+                    className: "mb-3 navigation-main"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _reactDefault.default.createElement(_navbarView.NavBar, {
+                    user: user
+                }))), /*#__PURE__*/ _reactDefault.default.createElement(_updateViewJsx.UpdateView, {
+                    user: user,
+                    movies: movies,
+                    onBackClick: ()=>history.goBack()
+                })));
+            },
+            __source: {
+                fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\main-view\\main-view.jsx",
+                lineNumber: 148
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
             path: "/movies/:Title",
             render: ({ match , history  })=>{
                 if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
@@ -22213,7 +22261,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 127
+                lineNumber: 170
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -22242,7 +22290,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 144
+                lineNumber: 187
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -22270,55 +22318,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 170
-            },
-            __self: this
-        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
-            path: "/users/:Username",
-            render: ({ history  })=>{
-                if (movies.length === 0) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
-                    className: "main-view"
-                }));
-                if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
-                    onLoggedIn: (user1)=>this.onLoggedIn(user1)
-                })));
-                return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
-                    className: "m-3 navigation-main"
-                }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _reactDefault.default.createElement(_navbarView.NavBar, {
-                    user: user
-                }))), /*#__PURE__*/ _reactDefault.default.createElement(_profileView.ProfileView, {
-                    user: user,
-                    movies: movies,
-                    onBackClick: ()=>history.goBack()
-                })));
-            },
-            __source: {
-                fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 196
-            },
-            __self: this
-        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
-            path: "/users/:Username",
-            render: ({ history  })=>{
-                if (movies.length === 0) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
-                    className: "main-view"
-                }));
-                if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
-                    onLoggedIn: (user1)=>this.onLoggedIn(user1)
-                })));
-                return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
-                    className: "mb-3 navigation-main"
-                }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, null, /*#__PURE__*/ _reactDefault.default.createElement(_navbarView.NavBar, {
-                    user: user
-                }))), /*#__PURE__*/ _reactDefault.default.createElement(_updateViewJsx.UpdateView, {
-                    user: user,
-                    movies: movies,
-                    onBackClick: ()=>history.goBack()
-                })));
-            },
-            __source: {
-                fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\main-view\\main-view.jsx",
-                lineNumber: 217
+                lineNumber: 213
             },
             __self: this
         })))));
@@ -41492,7 +41492,7 @@ function LoginView(props) {
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
         className: "myFlix-logo",
-        width: 400,
+        width: 200,
         src: _myflixLogoPngDefault.default,
         alt: "logo",
         __source: {
