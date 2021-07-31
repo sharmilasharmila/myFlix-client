@@ -22338,7 +22338,7 @@ exports.default = _reactRedux.connect(mapStateToProps, {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","axios":"7rA65","react-router-dom":"1PMSK","react-redux":"7GDa4","../../actions/actions":"5S6cN","../movie-view/movie-view":"4rIXY","../registration-view/registration-view":"5GlkG","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","../movies-list/movies-list":"4Lsx2","react-bootstrap":"4n7hB","../director-view/director-view":"7y95x","../genre-view/genre-view":"DdLfj","../navbar-view/navbar-view":"1WEak","../profile-view/profile-view":"7th2y","../update-view/update-view.jsx":"7Enrg","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","../Login-View/Login-View":"Sm8sI"}],"7rA65":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","react-router-dom":"1PMSK","react-redux":"7GDa4","../../actions/actions":"5S6cN","../movie-view/movie-view":"4rIXY","../registration-view/registration-view":"5GlkG","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","../movies-list/movies-list":"4Lsx2","react-bootstrap":"4n7hB","../director-view/director-view":"7y95x","../genre-view/genre-view":"DdLfj","../navbar-view/navbar-view":"1WEak","../profile-view/profile-view":"7th2y","../update-view/update-view.jsx":"7Enrg","../Login-View/Login-View":"Sm8sI","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
@@ -41923,7 +41923,7 @@ class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie  } = this.props;
         return(/*#__PURE__*/ _reactDefault.default.createElement(_cardDefault.default, {
-            className: "h-100 text-white bg-transparent",
+            className: "h-100 bg-transparent",
             __source: {
                 fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\movie-card\\movie-card.jsx",
                 lineNumber: 14
@@ -43017,7 +43017,7 @@ var _myflixLogoPng = require("url:../../../public/myflix-logo.png");
 var _myflixLogoPngDefault = parcelHelpers.interopDefault(_myflixLogoPng);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _loginViewScss = require("./login-view.scss");
+var _loginViewScss = require("./Login-View.scss");
 var _s = $RefreshSig$();
 function LoginView(props) {
     _s();
@@ -43155,7 +43155,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","url:../../../public/myflix-logo.png":"4bldo","axios":"7rA65","./login-view.scss":"3BQQF","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"3BQQF":[function() {},{}],"7panR":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","react-bootstrap/Form":"6A5ko","react-bootstrap/Button":"1ru0l","url:../../../public/myflix-logo.png":"4bldo","axios":"7rA65","./Login-View.scss":"4q0Cc","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"4q0Cc":[function() {},{}],"7panR":[function(require,module,exports) {
 'use strict';
 Object.defineProperty(exports, '__esModule', {
     value: true
