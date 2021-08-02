@@ -42375,29 +42375,6 @@ class NavBar extends _reactDefault.default.Component {
                 lineNumber: 43
             },
             __self: this
-        }, "Logout"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.NavDropdown.Divider, {
-            __source: {
-                fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\navbar-view\\navbar-view.jsx",
-                lineNumber: 44
-            },
-            __self: this
-        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.NavDropdown.Item, {
-            __source: {
-                fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\navbar-view\\navbar-view.jsx",
-                lineNumber: 45
-            },
-            __self: this
-        }), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-            className: "logout-button",
-            variant: "link",
-            onClick: ()=>{
-                this.onLoggedOut();
-            },
-            __source: {
-                fileName: "C:\\Users\\Sajith\\Documents\\GitHub\\sharmila\\myflix-Client\\src\\components\\navbar-view\\navbar-view.jsx",
-                lineNumber: 46
-            },
-            __self: this
         }, "Logout")))))));
     }
 }
