@@ -5,10 +5,11 @@ User Authentication is using JWT-based authentication and basic HTTP authenticat
 The database is built with MongoDB and Express and is hosted on Heroku.</p>
 
 <h3>Tools Used</h3>
-React
-React-Bootstrap
-Redux
-
+<ul>
+  <li>React</li>
+  <li>React-Bootstrap</li>
+  <li>Redux</li>
+</ul>
 <h3>Dependencies</h3>
 <ul>
   <li>axios</li>
@@ -32,4 +33,7 @@ Redux
 </ul>
 
 <h3>Start Application</h3>
-<p>parcel src/index.html<p>
+<p>Install all the packages</p>
+`npm install`
+<p>Start Applicaion</p>
+`parcel src/index.html`
